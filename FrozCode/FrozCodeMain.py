@@ -1,3 +1,4 @@
+# Created by DrFrostij 2026
 
 variables = {}
 
@@ -42,17 +43,3 @@ def run_program(code):
             raise SyntaxError(
                 f"Unknown command on line {line_number}: {command}"
             )
-
-
-program = '''
-say "Hello from FrostLang!"
-set score = 10
-add score 5
-say score
-'''
-
-run_program(program)
-
-
-
-# plan: make it basically like python but the coding language will be LMC
