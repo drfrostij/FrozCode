@@ -26,6 +26,10 @@ import tkinter                                                                  
 # Main Startup Code Area #
 ##########################
 
+##############################
+# Java GUI Functions Section #
+##############################
+
 def javalanguageguicreate():
     print("Create Java Program button clicked")
 

@@ -9,8 +9,6 @@
 # The imports section  #
 ########################
 
-
-from FrozCodeMain import run_program
 from lmc import lmclanguageguicreate, lmclanguageguidelete, lmclanguageguiopen
 from python import pythonlanguageguicreate, pythonlanguageguidelete, pythonlanguageguiopen
 from java import javalanguageguicreate, javalanguageguidelete, javalanguageguiopen
@@ -31,15 +29,6 @@ import tkinter                                                                  
 ##########################
 # Main Startup Code Area #
 ##########################
-
-program = '''
-say "Hello from FrostLang!"
-set score = 10
-add score 5
-say score
-'''
-
-run_program(program)
 
 
 def mainGUI():

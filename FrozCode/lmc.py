@@ -9,6 +9,8 @@
 # The imports section  #
 ########################
 
+from lmcvariables import run_program
+
 import os                       # this is used to get the images + sounds we want                   # (needs pip installment)
 # https://docs.python.org/3/library/os.html                                                         #OS documentation
 import pygame                   # this is for the graphics and sounds                               # (needs pip installment)
@@ -27,6 +29,23 @@ import tkinter                                                                  
 ##########################
 
 
+################################
+# LMC Coding functions Section #
+################################
+
+program = '''
+say "Hello from FrostLang!"
+set score = 10
+add score 5
+say score
+'''
+
+run_program(program)
+
+#############################
+# LMC GUI Functions Section #
+#############################
+
 def lmclanguageguicreate():
     print("Create LMC Program button clicked")
 
@@ -35,3 +54,4 @@ def lmclanguageguidelete():
 
 def lmclanguageguiopen():
     print("Open LMC Program button clicked")
+

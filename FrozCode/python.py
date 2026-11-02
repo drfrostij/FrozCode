@@ -26,6 +26,10 @@ import tkinter                                                                  
 # Main Startup Code Area #
 ##########################
 
+################################
+# Python GUI Functions Section #
+################################
+
 def pythonlanguageguicreate():
     print("Create Python Program button clicked")
 
