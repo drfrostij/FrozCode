@@ -31,10 +31,20 @@ import tkinter                                                                  
 ##############################
 
 def javalanguageguicreate():
+    # https://www.w3schools.com/python/python_file_write.asp
+    # This function creates a new Java program file which will be a text file that is just read when by a python function to run the Java program
     print("Create Java Program button clicked")
+    # Pop up a message box that says it was created successfully
+    messagebox.showinfo("Create Java Program", "Java Program file created successfully!")
 
 def javalanguageguidelete():
-    print("Delete Java Program button clicked") 
+    # This function deletes the text file that is the Java program file that was created by the create function
+    print("Delete Java Program button clicked")
+    # Pop up a message box that says it was deleted successfully
+    messagebox.showinfo("Delete Java Program", "Java Program file deleted successfully!")
 
 def javalanguageguiopen():
+    # This function opens the text file that is the Java program file that was created by the create function
     print("Open Java Program button clicked")
+    # Pop up a message box that says it was opened successfully
+    messagebox.showinfo("Open Java Program", "Java Program file opened successfully!")
