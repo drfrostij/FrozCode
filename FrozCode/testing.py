@@ -1,4 +1,5 @@
-import os                       # this is used to get the images + sounds we want                   # (needs pip installment)
+
+import os                       # this is used to get the files we want                             # (needs pip installment)
 # https://docs.python.org/3/library/os.html                                                         #OS documentation
 import pygame                   # this is for the graphics and sounds                               # (needs pip installment)
 #https://www.pygame.org/docs/                                                                       #Pygame documentation
@@ -13,13 +14,3 @@ import tkinter                                                                  
 
 
 
-
-global lmclanguageguicreateprogramname
-lmclanguageguicreateprogramname = customtkinter.CTk()
-lmclanguageguicreateprogramname.title("Create LMC Program")
-lmclanguageguicreateprogramname.geometry("400x300")
-entry = customtkinter.CTkEntry(lmclanguageguicreateprogramname, placeholder_text="CTkEntry")
-entry.pack(pady=20, padx=20)
-
-
-lmclanguageguicreateprogramname.mainloop()
