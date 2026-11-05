@@ -168,7 +168,8 @@ def openjava(entry):
     if os.path.exists("frostlang/" + openjavafile + "java.txt"):
       os.remove("frostlang/" + openjavafile + "java.txt")
       messagebox.showinfo("Open Java Program", "Java Program file opened successfully!")
-      javafileviewer(openjavafile + "java.txt")
+      openjavafile = openjavafile + "java.txt"  # Add the .txt extension to the file name
+      javafileviewer(openjavafile)
     else:
         messagebox.showinfo("Open Java Program", "Java Program file does not exist or could not be opened!")
 

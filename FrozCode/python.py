@@ -156,7 +156,8 @@ def openpython(entry):
     if os.path.exists("frostlang/" + openpythonfile + "python.txt"):
       os.remove("frostlang/" + openpythonfile + "python.txt")
       messagebox.showinfo("Open Python Program", "Python Program file opened successfully!")
-      pythonfileviewer(openpythonfile + "python.txt")
+      openpythonfile = openpythonfile + "python.txt"  # Add the .txt extension to the file name
+      pythonfileviewer(openpythonfile)
     else:
         messagebox.showinfo("Open Python Program", "Python Program file does not exist or could not be opened!")
 

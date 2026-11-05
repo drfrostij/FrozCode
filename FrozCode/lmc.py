@@ -181,7 +181,8 @@ def openlmc(entry):
     if os.path.exists("frostlang/" + openlmcfile + "lmc.txt"):
       os.remove("frostlang/" + openlmcfile + "lmc.txt")
       messagebox.showinfo("Open LMC Program", "LMC Program file opened successfully!")
-      lmcfileviewer(openlmcfile + "lmc.txt")
+      openlmcfile = openlmcfile + "lmc.txt"  # Add the .txt extension to the file name
+      lmcfileviewer(openlmcfile)
     else:
         messagebox.showinfo("Open LMC Program", "LMC Program file does not exist or could not be opened!")
 

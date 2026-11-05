@@ -13,4 +13,16 @@ import tkinter                                                                  
 #https://docs.python.org/3/library/tkinter.html  
 
 
+openlmcfile="frostlang/testlmc.txt"  # this is the name of the file we want to open, it can be changed to any other file name
 
+print("Opening LMC Program file: " + openlmcfile)
+# Open the text file with the name of the entry widget
+global lmcfileviewerwindowet
+lmcfileviewerwindowet = customtkinter.CTk()
+lmcfileviewerwindowet.title("LMC Program Viewer")
+lmcfileviewerwindowet.geometry("800x600")
+text_widget = customtkinter.CTkTextbox(lmcfileviewerwindowet)
+text_widget.pack(fill="both", expand=True)
+with open("frostlang/" + openlmcfile, "r") as f:
+    text_widget.insert("1.0", f.read())
+lmcfileviewerwindowet.mainloop()
