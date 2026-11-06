@@ -153,15 +153,9 @@ def openjava(entry):
     # Pop up a message box that says it was opened successfully
     openjavafile = entry.get()  # Get the value of the entry widget
     print(openjavafile)
-
-    # Delete the text file with the name of the entry widget
-    if os.path.exists("frostlang/" + openjavafile + "java.txt"):
-      os.remove("frostlang/" + openjavafile + "java.txt")
-      messagebox.showinfo("Open Java Program", "Java Program file opened successfully!")
-      openjavafile = openjavafile + "java.txt"  # Add the .txt extension to the file name
-      javafileviewer(openjavafile)
-    else:
-        messagebox.showinfo("Open Java Program", "Java Program file does not exist or could not be opened!")
+    openjavafile = openjavafile + "java.txt"  # Add the .txt extension to the file name
+    javafileviewer(openjavafile)
+    messagebox.showinfo("Open Java Program", "Java Program file does not exist or could not be opened!")
 
     # Close the GUI window
     javalanguageguiopenprogramname.destroy()

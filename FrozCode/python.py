@@ -148,15 +148,9 @@ def openpython(entry):
     # Pop up a message box that says it was opened successfully
     openpythonfile = entry.get()  # Get the value of the entry widget
     print(openpythonfile)
-
-    # Delete the text file with the name of the entry widget
-    if os.path.exists("frostlang/" + openpythonfile + "python.txt"):
-      os.remove("frostlang/" + openpythonfile + "python.txt")
-      messagebox.showinfo("Open Python Program", "Python Program file opened successfully!")
-      openpythonfile = openpythonfile + "python.txt"  # Add the .txt extension to the file name
-      pythonfileviewer(openpythonfile)
-    else:
-        messagebox.showinfo("Open Python Program", "Python Program file does not exist or could not be opened!")
+    openpythonfile = openpythonfile + "python.txt"  # Add the .txt extension to the file name
+    pythonfileviewer(openpythonfile)
+    messagebox.showinfo("Open Python Program", "Python Program file does not exist or could not be opened!")
 
     # Close the GUI window
     pythonlanguageguiopenprogramname.destroy()

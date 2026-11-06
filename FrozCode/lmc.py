@@ -30,15 +30,6 @@ from pathlib import Path                                                        
 # LMC Coding functions Section #
 ################################
 
-program = '''
-say "Hello from FrostLang!"
-set score = 10
-add score 5
-say score
-'''
-
-run_program(program)
-
 #############################
 # LMC GUI Functions Section #
 #############################
@@ -93,6 +84,19 @@ def run_program(program):
     # We will also display a message box that says it was run successfully
     messagebox.showinfo("Run LMC Program", "LMC Program ran successfully!")
 
+    #https://stackoverflow.com/questions/61468952/copying-text-from-a-txt-file-and-assigning-it-into-a-variable-in-python
+    # Copying text from a txt file and assigning it into a variable in python
+    with open("frostlang/testlmc.txt", "r") as f:
+        program = f.read()
+    
+    # GUI to display the output of the LMC program in a new window
+    global lmcoutputwindow
+    lmcoutputwindow = customtkinter.CTk()
+    lmcoutputwindow.title("LMC Program Output")
+    lmcoutputwindow.geometry("800x600")
+    output_text = customtkinter.CTkTextbox(lmcoutputwindow)
+    output_text.pack(fill="both", expand=True)
+    output_text.insert("1.0", program)
 
 
 ##################################################################################################################################
@@ -202,15 +206,9 @@ def openlmc(entry):
     # Pop up a message box that says it was opened successfully
     openlmcfile = entry.get()  # Get the value of the entry widget
     print(openlmcfile)
-
-    # Delete the text file with the name of the entry widget
-    if os.path.exists("frostlang/" + openlmcfile + "lmc.txt"):
-      os.remove("frostlang/" + openlmcfile + "lmc.txt")
-      messagebox.showinfo("Open LMC Program", "LMC Program file opened successfully!")
-      openlmcfile = openlmcfile + "lmc.txt"  # Add the .txt extension to the file name
-      lmcfileviewer(openlmcfile)
-    else:
-        messagebox.showinfo("Open LMC Program", "LMC Program file does not exist or could not be opened!")
+    openlmcfile = openlmcfile + "lmc.txt"  # Add the .txt extension to the file name
+    lmcfileviewer(openlmcfile)
+    messagebox.showinfo("Open LMC Program", "LMC Program file does not exist or could not be opened!")
 
     # Close the GUI window
     lmclanguageguiopenprogramname.destroy()

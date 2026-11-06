@@ -1,3 +1,4 @@
-hi
-welcome
-ello
+say "Hello from FrostLang!"
+set score = 10
+add score 5
+say score

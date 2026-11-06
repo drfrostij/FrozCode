@@ -39,8 +39,6 @@ def lmcfileviewer(openlmcfile):
     # This is the run button that runs the LMC program in the text file with the name of the entry widget
     run_button = customtkinter.CTkButton(lmcfileviewerwindowet, text="Run", command=lambda: run_program(text_widget.get("1.0", "end-1c")))
     run_button.pack(pady=10)
-
-
     lmcfileviewerwindowet.mainloop()
 
 
@@ -57,6 +55,32 @@ def run_program(program):
     # Here we will run the LMC program using the run_program function from lmcvariables.py
     # We will also display a message box that says it was run successfully
     messagebox.showinfo("Run LMC Program", "LMC Program ran successfully!")
+
+
+
+    #########
+    ######### ChatGBT code becuase the bloody file directory is not working for some reason, so I will just hard code the file name for now
+    #########
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+    file_path = os.path.join(BASE_DIR, "frostlang", "testlmc.txt")
+
+    #https://stackoverflow.com/questions/61468952/copying-text-from-a-txt-file-and-assigning-it-into-a-variable-in-python
+    # Copying text from a txt file and assigning it into a variable in python
+    with open(file_path, "r") as f:
+        program = f.read()
+    
+    # GUI to display the output of the LMC program in a new window
+    global lmcoutputwindow
+    lmcoutputwindow = customtkinter.CTk()
+    lmcoutputwindow.title("LMC Program Output")
+    lmcoutputwindow.geometry("800x600")
+    output_text = customtkinter.CTkTextbox(lmcoutputwindow)
+    output_text.pack(fill="both", expand=True)
+    output_text.insert("1.0", program)
+
+    lmcoutputwindow.mainloop()
 
 
 
