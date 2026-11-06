@@ -53,10 +53,6 @@ def run_program(program):
     # This function runs the LMC program in the text file with the name of the entry widget
     print("Running LMC Program...")
     # Here we will run the LMC program using the run_program function from lmcvariables.py
-    # We will also display a message box that says it was run successfully
-    messagebox.showinfo("Run LMC Program", "LMC Program ran successfully!")
-
-
 
     #########
     ######### ChatGBT code becuase the bloody file directory is not working for some reason, so I will just hard code the file name for now
@@ -72,15 +68,15 @@ def run_program(program):
         program = f.read()
     
     # GUI to display the output of the LMC program in a new window
-    global lmcoutputwindow
-    lmcoutputwindow = customtkinter.CTk()
-    lmcoutputwindow.title("LMC Program Output")
-    lmcoutputwindow.geometry("800x600")
-    output_text = customtkinter.CTkTextbox(lmcoutputwindow)
+    lmcoutput = customtkinter.CTkToplevel()
+    lmcoutput.title("LMC Program Output")
+    lmcoutput.geometry("800x600")
+    output_text = customtkinter.CTkTextbox(lmcoutput)
     output_text.pack(fill="both", expand=True)
-    output_text.insert("1.0", program)
+    output_text.insert("1.0", run_program(program))
+    messagebox.showinfo("Run LMC Program", "LMC Program ran successfully!")
 
-    lmcoutputwindow.mainloop()
+
 
 
 
