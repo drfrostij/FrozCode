@@ -1,4 +1,8 @@
-say "Hello from FrostLang!"
-set score = 10
-add score 5
-say score
+        INP 
+        STA FIRST
+        INP 
+        ADD FIRST
+        OUT
+        HLT
+
+FIRST   DAT 0
