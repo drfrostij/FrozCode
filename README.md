@@ -1,40 +1,37 @@
 # Froz Code
 
-**Froz Code** is a GUI-based code editor for **Python and Little Man Computer (LMC)**. It allows users to create, edit, delete and save code through a graphical interface.
+**Froz Code** is a GUI-based code editor for **Little Man Computer (LMC)**. It allows users to create, edit, delete and save LMC programs through a graphical interface.
 
 ## Features
 
-- **Python Editor** — Write and edit Python code.
 - **LMC Editor** — Write and edit Little Man Computer programs.
-- **Create Files** — Create new code files directly through the GUI.
-- **Edit Files** — Modify existing code.
-- **Delete Files** — Remove unwanted code files.
-- **Save Files** — Save changes to your code.
-- **Simple GUI** — Manage your code in one application.
+- **Create Files** — Create new LMC program files directly through the GUI.
+- **Edit Files** — Modify existing LMC programs.
+- **Delete Files** — Remove unwanted LMC programs.
+- **Save Files** — Save changes to your programs.
+- **Simple GUI** — Manage your LMC programs in one application.
 
-## Supported Languages
+## Supported Language
 
 | Language | Purpose |
 |---|---|
-| Python | General-purpose programming and software development |
-| LMC | Learning assembly language and fundamental CPU operations |
+| LMC | Learning assembly language and understanding fundamental CPU operations. |
 
 ## Getting Started
 
 1. Download or clone this repository.
 2. Run the application using Python.
-3. Select Python or LMC.
-4. Create, edit, or manage your code through the GUI.
+3. Open the LMC editor.
+4. Create, edit or manage your LMC programs through the GUI.
 5. Save your work when finished.
 
 ## Built With
 
 - Python
-- Custom GUI components
+- CustomTkinter
 
 ## About
 
-Data is stored on a folder inside the FrozCode and can ONLY access files inside that folder
+Froz Code stores its program files in a dedicated folder inside the application directory. It can only access files within that folder.
 
-Froz Code is a programming project designed to bring Python and LMC code management together in one desktop application.
-
+Froz Code is a programming project designed to provide a simple graphical environment for creating and managing Little Man Computer programs.
