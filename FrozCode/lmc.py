@@ -124,25 +124,29 @@ def createlmc(entry):
     # https://www.w3schools.com/python/python_file_write.asp
     # This function creates a new LMC program file which will be a text file that is just read when by a python function to run the LMC program
     print("Create LMC Program button clicked")
-    # Pop up a message box that says it was created successfully
-    createlmcfile = entry.get()  # Get the value of the entry widget
+    # Get the value of the entry widget
+    createlmcfile = entry.get()
     print(createlmcfile + "lmc.txt")
-
+    # Create the frostlang folder if it doesn't exist
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    FOLDER = os.path.join(BASE_DIR, "frostlang")
+    os.makedirs(FOLDER, exist_ok=True)
 
     # Create a new text file with the name of the entry widget
-    with open("frostlang/" + createlmcfile + "lmc.txt", "a") as f:
-       f.write("Welcome to FrostLang! This is your new LMC program file. You can start coding here.")
+    filename = createlmcfile + "lmc.txt"
+    filepath = os.path.join(FOLDER, filename)
+    with open(filepath, "a") as f:
+        f.write("Welcome to FrostLang! This is your new LMC program file. You can start coding here.")
 
     # Put the new text file in a text file called "lmcprograms.txt" that is a list of all the LMC programs that have been created
 
-    createlmcfile = createlmcfile + "lmc.txt"  # Add the .txt extension to the file name
-
-
-    with open("lmcprograms.txt", "a") as f:
-        f.write(createlmcfile + "lmc.txt\n")
+    with open(os.path.join(BASE_DIR, "lmcprograms.txt"), "a") as f:
+        f.write(filename + "\n")
 
     # Close the GUI window
-    lmclanguageguicreateprogramname.destroy()
+    popup = messagebox.showinfo("Create LMC Program", "LMC Program file created successfully!")
+    lmclanguageguicreateprogramname.after(200, lmclanguageguicreateprogramname.destroy)
+
 
 def lmclanguageguicreate():
     global lmclanguageguicreateprogramname
@@ -242,3 +246,35 @@ def lmclanguageguiopen():
     messagebox.showinfo("Open LMC Program", "LMC Program file opener has opened successfully! Please enter the name of your LMC program file and click the Open LMC Program button to open it.")
 
     lmclanguageguiopenprogramname.mainloop()
+
+# run the LMC program in the text file with the name of the entry widget
+
+def lmclanguagegui():
+    global lmcgui
+    lmcgui = customtkinter.CTk()
+    lmcgui.title("LMC GUI")
+    lmcgui.geometry("400x300")
+    # Logo
+    lmclogo = customtkinter.CTkButton(lmcgui, text="Select the options of LMC")
+    lmclogo.grid(row=0, column=0, padx=20, pady=20)
+    lmclogo.configure(state="enabled")
+    lmclogo.configure(fg_color="light blue")
+    lmclogo.configure(width=200, height=50)
+    lmclogo.configure(font=("Arial", 30))
+    lmclogo.configure(text_color="Black")
+    # Choose language button area
+    # LMC langauge
+    #Creating an button
+    #https://customtkinter.tomschimansky.com/tutorial/grid-system
+    createlmc = customtkinter.CTkButton(lmcgui, text="Create LMC Program", command=lambda:lmclanguageguicreate())
+    createlmc.grid(row=1, column=0, padx=20, pady=20)
+    lmcgui.grid_columnconfigure(0, weight=1)     #Sets the button in the middle of the GUI
+    deletemlc = customtkinter.CTkButton(lmcgui, text="Delete LMC Program", command=lambda:lmclanguageguidelete())
+    deletemlc.grid(row=2, column=0, padx=20, pady=20)
+    lmcgui.grid_columnconfigure(0, weight=1)     #Sets the button in the middle of the GUI
+    openlmc = customtkinter.CTkButton(lmcgui, text="Open LMC Program", command=lambda:lmclanguageguiopen())
+    openlmc.grid(row=3, column=0, padx=20, pady=20)
+    lmcgui.grid_columnconfigure(0, weight=1)     #Sets the button in the middle of the GUI
+    lmcgui.mainloop()
+
+lmclanguagegui()
